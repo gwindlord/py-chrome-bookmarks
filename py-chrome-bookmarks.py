@@ -8,9 +8,13 @@
 # (c) Benjamin Esham, 2011.  See the accompanying README for this file's
 # license and other information.
 
-import json, sys, os, re
+import json, sys, os, re, csv
 
-script_version = "1.1"
+script_version = "1.2"
+
+config_name="config.txt"
+infile="in_file"
+outfile="out_file"
 
 # html escaping code from http://wiki.python.org/moin/EscapingHtml
 
@@ -84,14 +88,27 @@ if "-v" in sys.argv or "--version" in sys.argv:
 	version_text()
 	exit()
 
+'''
 if len(sys.argv) != 3 or "-h" in sys.argv or "--help" in sys.argv:
 	help_text()
 	exit()
 
 # the actual code here...
-
 in_file = os.path.expanduser(sys.argv[1])
 out_file = os.path.expanduser(sys.argv[2])
+'''
+
+with open(config_name, 'r+U') as config:
+  # creating csv writer
+  writer = csv.writer(config, delimiter="=")
+  # read all settings
+  settings = dict([(row[0], row[1]) for row in csv.reader(config, delimiter="=")])
+  # setting cursor to start of file
+  config.seek(0)
+  in_file = settings[infile]
+  out_file = settings[outfile]
+  print " ".join(("Infile:", in_file))
+  print " ".join(("Outfile:", out_file))
 
 try:
 	f = open(in_file, 'r')
