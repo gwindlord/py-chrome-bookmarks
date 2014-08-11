@@ -47,7 +47,7 @@ I’ll implement these when I get around to them…
 
 ## Links
 
-This script is [hosted on GitHub](https://github.com/bdesham/py-chrome-bookmarks).
+This script is [hosted on GitHub](https://github.com/gwindlord/py-chrome-bookmarks).
 
 ## License
 
