@@ -13,10 +13,13 @@ From the command line, do
     python py-chrome-bookmarks.py
 
 Config.txt should contain
+
     in_file=
     out_file=
+
 like common properties format. The script reads config and uses that paths.
 If path includes spaces or something other requiring quotes, thy has to be set in the config, like
+
     in_file="c:\Users\1234\AppData\Local\Chromium\User Data\Default\Bookmarks" 
 
 The script will ignore URLs that start with “javascript:”.
