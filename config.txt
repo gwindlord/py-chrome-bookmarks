@@ -1,2 +1,2 @@
-in_file=/storage/emulated/0/Android/data/com.dropbox/android/files/u66673431/scratch/Bookmarks
+in_file=/storage/emulated/0/Android/data/com.dropbox.android/files/u66673431/scratch/Bookmarks
 out_file=/storage/emulated/0/download/Bookmarks.html
